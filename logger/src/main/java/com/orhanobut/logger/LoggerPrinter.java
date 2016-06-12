@@ -346,7 +346,7 @@ final class LoggerPrinter implements Printer {
   }
 
   private String createMessage(String message, Object... args) {
-    return args.length == 0 ? message : String.format(message, args);
+    return (args != null && args.length == 0) ? message : String.format(message, args);
   }
 
   private int getMethodCount() {
